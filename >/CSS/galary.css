@@ -1,0 +1,235 @@
+body  { 
+  background-color: rgb(189, 214, 226);
+  height: auto;
+  width: 100%;
+  max-width: 2000px;
+}
+*
+{
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: silver;
+  box-shadow: inset 0 0  10px 4px ivory; 
+} 
+.Top {
+  border-bottom: 3px solid ivory;
+}
+h1 {
+  text-align: center;
+  font-size: 45px;
+  color: rgb(71, 73, 75);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-shadow: 3px 3px 5px ivory ;
+  margin:  3rem;
+  transition: 0.5s;
+}
+h1:hover {
+  color: black;
+}
+.nav-link {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 1rem;
+}
+ul { 
+  text-align: center;
+  list-style: none; 
+}
+.dws-menu > li {
+  display: inline-block;
+  position: relative;
+}
+.nav-link ul a {
+  color: #000000; 
+}
+.nav-link .submenu {
+  display: none;
+  background: #b19891;
+}
+.nav-link ul li:hover .submenu {
+  display: block;
+}
+a {  
+  color: black; 
+  font-size: 30px;
+  font-style: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration:none;
+  display: block;
+  padding: 10px 15px;
+  outline: none;
+  transition: 0.5s linear;
+}
+.fa {
+  font-family: "FontAwesome";
+  color: inherit;
+  padding-left: 20px;
+} 
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  -webkit-transition: 0.5s ;
+  -moz-transition: 0.5s ;
+  -o-transition: 0.5s ;
+  transition: 0.5s ;
+  text-align: center;
+} 
+.sub { 
+  font-size: 25px;
+  border:1px solid black;
+  transition: 1s;
+}
+.sub > a:hover {
+  color:ivory;
+}
+.sub:hover {
+  color: ivory;
+  border-bottom: 3px solid black;
+  background-color: rgb(85, 88, 100);
+}
+a.navigation:hover { 
+  color: ivory;
+  border-bottom: 3px solid black;
+  background-color: rgb(85, 88, 100);
+}
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+ 
+}
+.article {
+ margin: 3rem;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  align-content: center;
+}
+h3 {    
+  transition: 1s;
+  text-align: center;
+  font-size: 25px;
+  padding: 2rem;
+  border: 10px solid ivory;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} 
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 20px;
+  justify-content: center;
+  
+}
+.row { 
+  max-width: 20%;
+  padding: 20px 20px;
+}
+img.box1 { 
+  width: 100%;
+  border-radius: 40px;
+  box-shadow: 1px 3px 10px rgb(71, 73, 75); 
+  margin: 1rem;
+  transition: 1s
+}
+.box1:hover
+{
+  transform: scale(1.1);
+}
+.footer {
+  background-color: silver;
+  box-shadow:inset 0 0  10px 4px rgb(219, 239, 255);
+  display: flex;
+  justify-items: flex-start;
+  flex-direction: row;
+  padding: 3rem;
+}
+
+a.navigation_1 {
+  color: black; 
+  font-size: 23px;
+  font-style: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration:none;
+  transition: 0.5s;
+  
+}
+a.navigation_1:hover{
+  color: ivory
+}
+@media  screen and (max-width : 800px) {
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  } 
+ 
+  h1 {
+    text-align: center;
+    font-size: 25px;
+  }
+ .dws-menu {
+  display: flex;
+  flex-direction: column;
+ }
+  
+  a.navigation { 
+    font-size: 16px;
+  }
+ li.sub > a {
+   font-size: 16px;
+ }
+ .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  -webkit-transition: 0.5s ;
+  -moz-transition: 0.5s ;
+  -o-transition: 0.5s ;
+  transition: 0.5s ;
+  text-align: center;
+ } 
+  h3 {
+   text-align: center;
+   font-size: 18px; 
+  }
+  .row {
+    flex: 100%;
+    max-width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    margin: 2rem;
+  }
+  img.box1 {
+    align-content: center;
+    margin:0;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+a.navigation_1 {
+  font-size: 15px; 
+}
+.navigation:hover {
+  background-color: rgb(21, 21, 22);
+  color: ivory;
+}
+}
