@@ -1,0 +1,251 @@
+body  { 
+  background-color: rgb(189, 214, 226);
+  height: auto;
+  width: 100%;
+  max-width: 2000px;
+}
+*
+{
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: silver;
+  box-shadow: inset 0 0  10px 4px ivory; 
+} 
+.Top {
+  border-bottom: 3px solid ivory;
+}
+h1 {
+  text-align: center;
+  font-size: 38px;
+  color: rgb(71, 73, 75);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-shadow: 3px 3px 5px ivory ;
+  margin:  3rem;
+  transition: 0.5s;
+}
+h1:hover {
+  color: black;
+}
+.nav-link {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 1rem;
+}
+ul { 
+  text-align: center;
+  list-style: none; 
+}
+.dws-menu > li {
+  display: inline-block;
+  position: relative;
+}
+.nav-link ul a {
+  color: #000000; 
+}
+.nav-link .submenu {
+  display: none;
+  background: #b19891;
+}
+.nav-link ul li:hover .submenu {
+  display: block;
+}
+a {  
+  color: black; 
+  font-size: 23px;
+  font-style: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration:none;
+  display: block;
+  padding: 10px 15px;
+  outline: none;
+  transition: 0.5s linear;
+}
+.fa {
+  font-family: "FontAwesome";
+  color: inherit;
+  padding-left: 20px;
+} 
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  -webkit-transition: 0.5s ;
+  -moz-transition: 0.5s ;
+  -o-transition: 0.5s ;
+  transition: 0.5s ;
+  text-align: center;
+} 
+.sub { 
+  font-size: 25px;
+  border:1px solid black;
+  transition: 0.5s;
+}
+.sub > a:hover {
+  color:ivory;
+}
+.sub:hover {
+  color: ivory;
+  border-bottom: 3px solid black;
+  background-color: rgb(85, 88, 100);
+}
+a.navigation:hover { 
+  color: ivory; 
+  border-bottom: 3px solid black;
+  background-color: rgb(85, 88, 100);
+}
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.content {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  flex-direction: row;
+}
+div.input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  height: 70px;
+  position: sticky;
+  top: 0;
+}
+.param {
+  border: 2px solid black;
+  background-color:silver;
+  width: auto;
+
+}
+h2 {
+  color: #000000;
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: inherit;
+  width: 100px; }
+
+p {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 1px solid black;
+}
+input {
+  
+  background-color: darkgray;
+  border: 1px solid black;
+
+}
+.row { 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 20px;
+}
+
+img.box1 { 
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 1px 3px 10px rgb(71, 73, 75); 
+  margin: 1rem;
+  transition: 1s;
+}
+img.box1:hover {
+  border: 3px solid black;
+}
+.footer {
+  background-color: silver;
+  box-shadow:inset 0 0  10px 4px rgb(219, 239, 255);
+  display: flex;
+  justify-items: flex-start;
+  flex-direction: row;
+  padding: 3rem;
+}
+
+a.navigation_1 {
+  color: black; 
+  font-size: 20px;
+  font-style: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration:none;
+  transition: 0.5s;
+}
+a.navigation_1:hover{
+  color: ivory
+}
+@media  screen and (max-width : 800px) {
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } 
+ 
+  h1 {
+    text-align: center;
+    font-size: 25px;
+  }
+ .dws-menu {
+  display: flex;
+  flex-direction: column;
+ }
+  
+  a.navigation { 
+    font-size: 16px;
+  }
+ li.sub > a {
+   font-size: 16px;
+ }
+ .submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  -webkit-transition: 0.5s ;
+  -moz-transition: 0.5s ;
+  -o-transition: 0.5s ;
+  transition: 0.5s ;
+  text-align: center;
+ } 
+  h3 {
+   text-align: center;
+   font-size: 18px; 
+  }
+  .row {
+    flex: 100%;
+    max-width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    margin: 2rem;
+  }
+  img.box1 {
+    align-content: center;
+    margin:0;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+a.navigation_1 {
+  font-size: 15px; 
+}
+.navigation:hover {
+  background-color: rgb(21, 21, 22);
+  color: ivory;
+}
+}
