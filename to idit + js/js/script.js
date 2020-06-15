@@ -733,7 +733,7 @@ $().ready(() => {
             }
         });
 
-        $('.information').append(`<div id="${idElement}"><p class ="edit-height"> Высота: ${heightValue}</p><p class ="edit-width"> Ширина: ${widthValue}</p></div>`)
+        $('.information').append(`<div id="${idElement}"><p class ="edit-height"> Height: ${heightValue}</p><p class ="edit-width"> Width: ${widthValue}</p></div>`)
     })
 
     $(document).on('dblclick', '.edit-height', function () {
