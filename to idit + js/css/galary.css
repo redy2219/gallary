@@ -122,11 +122,14 @@ div.input {
   position: sticky;
   top: 0;
 }
+input {
+  background-color: darkgray;
+  border: 1px solid black;
+}
 .param {
   border: 2px solid black;
   background-color:silver;
   width: auto;
-
 }
 h2 {
   color: #000000;
@@ -226,7 +229,6 @@ a.navigation_1:hover{
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  margin-bottom: 1rem;
   }
   .row {
     flex: 100%;
