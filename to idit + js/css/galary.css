@@ -223,9 +223,10 @@ a.navigation_1:hover{
   text-align: center;
  } 
  .content {
-    display: flex;
+  display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  margin-bottom: 1rem;
   }
   .row {
     flex: 100%;
