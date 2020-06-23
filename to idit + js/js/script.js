@@ -61,7 +61,7 @@ $().ready(() => {
         $('.information').empty();
     })
 
-    $(document).on('dblclick', '.box1', function () {
+    $(document).on('click', '.box1', function () {
         $('.information').empty();
         let idElement = $(this).prop('id');
         let heightValue = 0;
@@ -76,7 +76,7 @@ $().ready(() => {
         $('.information').append(`<div id="${idElement}"><p class ="edit-height"> Height: ${heightValue}</p><p class ="edit-width"> Width: ${widthValue}</p></div>`)
     })
 
-    $(document).on('dblclick', '.edit-height', function () {
+    $(document).on('click', '.edit-height', function () {
         const idElement = $(this).parent().prop('id');
 
         $(this).remove();
@@ -113,7 +113,7 @@ $().ready(() => {
         });
     });
 
-    $(document).on('dblclick', '.edit-width', function () {
+    $(document).on('click', '.edit-width', function () {
         const idElement = $(this).parent().prop('id');
         $(this).remove();
         const indexOfImg = arrayOfImages.findIndex(image => image.id === idElement);
