@@ -4,79 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/galary.css">
+    <link rel="stylesheet" href="./css/gallary.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="./js/script.js"></script>
     <title>gallary</title>
 </head>
-
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <div class="header">
-                <div class="Top">
-                    <h1>MOMENT OF LIFE</h1>
-                </div>
-                <nav class="nav-link">
-                    <ul class="dws-menu">
-                        <li><a class="navigation" href="#">Home<i class="fa fa-angle-down"></i></a>
-                            <ul class="submenu">
-                                <li class="sub"><a href="#">Contact</a></li>
-                                <li class="sub"><a href="#">Forum</a></li>
-                                <li class="sub"><a href="#">Private office</a></li>
-                            </ul>
-                        </li>
-                        </li>
-                        <li><a class="navigation" href="#">Top<i class="fa fa-angle-down"></i></a>
-                            <ul class="submenu">
-                                <li class="sub"><a href="#">Top 10</a></li>
-                                <li class="sub"><a href="#">Top 100</a></li>
-                                <li class="sub"><a href="#">Top day</a></li>
-                                <li class="sub"><a href="#">Top week</a></li>
-                                <li class="sub"><a href="#">Top year</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="navigation" href="#">Class<i class="fa fa-angle-down"></i></a>
-                            <ul class="submenu">
-                                <li class="sub"><a href="#">Animal</a></li>
-                                <li class="sub"><a href="#">Top</a></li>
-                                <li class="sub"><a href="#">People</a></li>
-                                <li class="sub"><a href="#">BW</a></li>
-                                <li class="sub"><a href="#">Colors</a></li>
-                                <li class="sub"><a href="#">Sky</a></li>
-                                <li class="sub"><a href="#">Car</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="navigation" href="#">About us</a></li>
-                        <li><a class="navigation" href="#"> Sing in</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main class="main">
-            <div class="content">
-                <div class="row">
 
-                </div>
-                <div class="input">
-                    <input type="file" class="inputImage" value="Upload file" multiple>
-                    <div class="param">
-                        <h2>To edit :</h2>
-                        <section class="information" id="information">
-
-                        </section>
-                    </div>
-                </div>
-        </main>
-        <footer class="footer">
-            <nav class="nav-link_footer">
-                <a class="navigation_1" href="#">Contact:</a>
-                <a class="navigation_1" href="#">Tel : +*(***)-(***)-(**)-(**)</a>
-                <a class="navigation_1" href="#"> mail : supportGMOL@gmail.com</a>
-                <a class="navigation_1" href="#">(c.) 2020 ~ MomentOfLife ~ </a>
-            </nav>
-        </footer>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+    <a style="color: white" class="menu navbar-brand">Menu</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="#navbarsExampleDefault">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mx-auto" id="navbarsExampleDefault">
+        <ul class="navbar-nav ">
+            <li class="nav-item dropdown">
+                <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01"
+                   aria-haspopup="true" data-target="menu1" aria-expanded="false">Home</a>
+                <ul class="dropdown-menu mr-auto" aria-haspopup="true" id="menu1" aria-labelledby="dropdown01">
+                    <li class="dropdown-item">Contact</li>
+                    <li class="dropdown-item">Forum</li>
+                    <li class="dropdown-item">Private office</li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="http://example.com" id="dropdown02"
+                   aria-haspopup="true" data-target="menu2" aria-expanded="false">Top</a>
+                <ul class="dropdown-menu mr-auto" aria-haspopup="true" id="menu2" aria-labelledby="dropdown02">
+                    <li class="dropdown-item">Animal</li>
+                    <li class="dropdown-item">Top</li>
+                    <li class="dropdown-item">People</li>
+                    <li class="dropdown-item">BW</li>
+                    <li class="dropdown-item">Colors</li>
+                    <li class="dropdown-item">Sky</li>
+                    <li class="dropdown-item">Car</li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03"
+                   aria-haspopup="true" aria-expanded="false">Class</a>
+                <ul class="dropdown-menu mr-auto" aria-haspopup="true" id="menu3">
+                    <li class="dropdown-item">Top 10</li>
+                    <li class="dropdown-item">Top 100</li>
+                    <li class="dropdown-item">Top day</li>
+                    <li class="dropdown-item">Top week</li>
+                    <li class="dropdown-item">Top year</li>
+                </ul>
+            </li>
+            <lic class="nav-item dropdown">
+                <a data-toggle="dropdown" class="nav-link " href="http://example.com" id="dropdown04"
+                   aria-haspopup="true" aria-expanded="false">About us</a>
+            </lic>
+            <li class="nav-item dropdown">
+                <a data-toggle="dropdown" class="nav-link " href="http://example.com" id="dropdown05"
+                   aria-haspopup="true" aria-expanded="false">Sing in </a>
+            </li>
+        </ul>
     </div>
-    <script src="./js/script.js"></script>
+</nav>
+
+<div class="wrapper">
+    <header class="header">
+        <div class="header">
+            <div class="Top">
+                <h1>MOMENT OF LIFE</h1>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="content">
+            <div class="row">
+
+            </div>
+            <div class="input">
+                <input type="file" class="inputImage" value="Upload file" multiple>
+                <div class="param">
+                    <h2>To edit : </h2>
+                    <section class="information" id="information">
+
+                    </section>
+            </div>
+    </main>
+    <footer class="footer">
+        <nav class="nav-link_footer">
+            <a class="navigation_1" href="#">Contact:</a>
+            <a class="navigation_1" href="#">Tel : +*(***)-(***)-(**)-(**)</a>
+            <a class="navigation_1" href="#"> mail : supportGMOL@gmail.com</a>
+            <a class="navigation_1" href="#">(c.) 2020 ~ MomentOfLife ~ </a>
+        </nav>
+    </footer>
+</div>
 </body>
 
 </html>
