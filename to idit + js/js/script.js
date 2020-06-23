@@ -1,4 +1,4 @@
-$().ready(() => {
+.ready(() => {
     const RADIX = 36;
     const FROM_SYMBOL = 2;
     const LENGTH_WORD = 9;
@@ -11,7 +11,6 @@ $().ready(() => {
         i++;
     }
 
-
     $('.inputImage').on('change', () => {
 
         CreateImage();
@@ -20,7 +19,7 @@ $().ready(() => {
     });
 
     const RenderImages = currentArray => {
-        $('.content .row').empty();
+        $('.content .row ').empty();
         let str = ``;
         currentArray.forEach(image => {
             str += `<div id="${image.id}">
@@ -31,7 +30,7 @@ $().ready(() => {
                     <path d="M0 0h24v24H0z" fill="none" />
                 </svg>
             </button>
-             <img id="${image.id}" class="box1" src="./css/Images/${image.adress}"  > 
+             <img id="${image.id}" class="box1" src="./css/Images/${image.address}"  > 
         </div>`
         })
         $('.content .row').append(str);
@@ -46,7 +45,7 @@ $().ready(() => {
         let selectedFile = ('.row')
         const image = {
             id: makeId(),
-            adress: selectedFile.name,
+            address: selectedFile.name,
             height: 300,
             width: 200
         }
@@ -54,8 +53,7 @@ $().ready(() => {
     }
 
     $(document).on('click', '.btn-delete-image', function () {
-
-        let idElement = $(this).prop('id');
+        let idElement = $(makeId()).prop('id');
         arrayOfImages = arrayOfImages.filter(image => image.id != idElement);
         RenderImages(arrayOfImages);
         $('.information').empty();
@@ -65,15 +63,18 @@ $().ready(() => {
         $('.information').empty();
         let idElement = $(this).prop('id');
         let heightValue = 0;
-        let widthValue = 0
+        let widthValue = 0;
+        let name = makeId();
         arrayOfImages.forEach(image => {
             if (image.id === idElement) {
                 heightValue = image.height
                 widthValue = image.width
+                name = image.address
             }
         });
 
-        $('.information').append(`<div id="${idElement}"><p class ="edit-height"> Height: ${heightValue}</p><p class ="edit-width"> Width: ${widthValue}</p></div>`)
+        $('.information').append(`<div id="${idElement}"><p class ="edit-height"> Height: ${heightValue}</p><p class ="edit-width"> Width: ${widthValue}</p>
+      <p class ="edit-name"> Name: ${name}</p></div>`)
     })
 
     $(document).on('click', '.edit-height', function () {
@@ -111,6 +112,15 @@ $().ready(() => {
 
             }
         });
+        $textEditArea.blur(() => {
+            if ($textEditArea.val() === ``) {
+                RenderImages(arrayOfImages);
+            } else {
+                arrayOfImages[indexOfImg].name = String(_.escape($textEditArea.val()).replace(/\s+/gu, ` `).trim());
+                RenderImages(arrayOfImages);
+
+            }
+        });
     });
 
     $(document).on('click', '.edit-width', function () {
@@ -128,8 +138,7 @@ $().ready(() => {
                 if ($textEditArea.val() === ``) {
                     RenderImages(arrayOfImages);
                 } else {
-                    arrayOfImages[indexOfImg].height = Number(_.escape($textEditArea.val()).replace(/\s+/gu, ` `)
-                        .trim());
+                    arrayOfImages[indexOfImg].height = Number(_.escape($textEditArea.val()).replace(/\s+/gu, ` `).trim());
                     RenderImages(arrayOfImages);
 
                 }
@@ -140,13 +149,60 @@ $().ready(() => {
             if ($textEditArea.val() === ``) {
                 RenderImages(arrayOfImages);
             } else {
-                arrayOfImages[indexOfImg].height = Number(_.escape($textEditArea.val()).replace(/\s+/gu, ` `)
-                    .trim());
+                arrayOfImages[indexOfImg].width = Number(_.escape($textEditArea.val()).replace(/\s+/gu, ` `).trim());
+                RenderImages(arrayOfImages);
+
+            }
+        });
+        $textEditArea.blur(() => {
+            if ($textEditArea.val() === ``) {
+                RenderImages(arrayOfImages);
+            } else {
+                arrayOfImages[indexOfImg].name = String(_.escape($textEditArea.val()).replace(/\s+/gu, ` `).trim());
                 RenderImages(arrayOfImages);
 
             }
         });
     });
 
+    $(document).on('click', '.edit-width', function () {
+        const idElement = $(this).parent().prop('id');
+        $(this).remove();
+        const indexOfImg = arrayOfImages.findIndex(image => image.id === idElement);
 
-})
+
+        $(`.information div[id="${idElement}"]`).append(`<input type="text" class="edit-name" value="${arrayOfImages[indexOfImg].name}">`);
+        const $textEditArea = $('.edit-width');
+        $textEditArea.focus();
+
+        $($textEditArea.focus()).keyup(event => {
+            if (event.keyCode === KEY_CODE) {
+                if ($textEditArea.val() === ``) {
+                    RenderImages(arrayOfImages);
+                } else {
+                    arrayOfImages[indexOfImg].height = Number(_.escape($textEditArea.val()).replace(/\s+/gu, ` `).trim());
+                    RenderImages(arrayOfImages);
+
+                }
+            }
+        });
+
+        $textEditArea.blur(() => {
+            if ($textEditArea.val() === ``) {
+                RenderImages(arrayOfImages);
+            } else {
+                arrayOfImages[indexOfImg].height = Number(_.escape($textEditArea.val()).replace(/\s+/gu, ` `).trim());
+                RenderImages(arrayOfImages);
+
+            }
+        });
+        $textEditArea.blur(() => {
+            if ($textEditArea.val() === ``) {
+                RenderImages(arrayOfImages);
+            } else {
+                arrayOfImages[indexOfImg].name = String(_.escape($textEditArea.val()).replace(/\s+/gu, ` `).trim());
+                RenderImages(arrayOfImages);
+
+            }
+        });
+    });
