@@ -1,0 +1,56 @@
+$().ready(() => {
+    const RADIX = 36;
+    const FROM_SYMBOL = 2;
+    const LENGTH_WORD = 9;
+    const KEY_CODE = 13;
+    const makeId = () => `_${Math.random().toString(RADIX).substr(FROM_SYMBOL, LENGTH_WORD)}`;
+    let arrayOfImages = [];
+    let currentImage = 1;
+
+    let i = 1;
+    while (i < 100) {
+        arrayOfImages[i] = {id: makeId(), address: 'image' + i + ".jpg", height: 300, width: 200};
+        i++;
+    }
+
+
+    const RenderImages = currentArray => {
+        $('.content .row ').empty();
+        let str = ``;
+        currentArray.forEach(image => {
+            str += `<div id="${image.id}" style="width:300px;height: 300px; background-size: cover; background-image: url('./css/Images/${image.address}') " class="clearfix m-1 box1">
+            <button type="button" id="${image.id}" class="btn-delete-image  btn-outline-light btn  float-right btn">
+                <svg class="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24 " fill="black" width="20px" height="20px">
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    <path d="M0 0h24v24H0z" fill="none" />
+                </svg>
+            </button>           
+        </div>`
+        })
+        $('.content .row').append(str);
+        currentArray.forEach(image => {
+            $(`.box1[id="${image.id}"]`).height(`${image.height}`)
+                .width(`${image.width}`);
+        })
+    }
+    $(window).load(function () {
+        RenderImages(arrayOfImages);
+        console.log("Render");
+    });
+    $(document).on('click', '.box1', function (event) {
+        $('.current-border-gallery-img').toggleClass('current-border-gallery-img');
+        $(event.target).addClass('current-border-gallery-img');
+    })
+
+    $(document).on('click', '#applyChanges', function () {
+        let height = $('#imageHeight').val();
+        $('.current-border-gallery-img').css('width', height);
+
+    })
+    $(document).on('click', '#applyChanges', function () {
+        let width = $('#imageWidth').val();
+        $('.current-border-gallery-img').css('height', width);
+    })
+
+})
