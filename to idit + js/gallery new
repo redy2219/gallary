@@ -118,10 +118,10 @@
                 </p>
                 <div class="collapse d-lg-block sticky-top" id="navbarsExampleDefault-1">
                     <div class="form-group">
-                        <li class="dropdown-item">
-                            <input type="file" class="inputImage btn btn-outline-dark" aria-describedby="basic-addon2">
+                        <li class="dropdown-item p-0">
+                            <input type="file" class="inputImage btn btn-outline-dark p-0" aria-describedby="basic-addon2">
                         </li>
-                        <li class="dropdown-item">
+                        <li class="dropdown-item p-0">
                             <div class="param ">
                                 <h2 class="text-secondary">To edit</h2>
                                 <section class="information " id="information">
