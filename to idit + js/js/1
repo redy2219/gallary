@@ -114,9 +114,6 @@ $().ready(() => {
         });
     });
 
-var description = document.getElementById("description");
-description.parentNode.removeChild(description);
-
 
 })
 
