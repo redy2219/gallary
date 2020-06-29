@@ -1,0 +1,121 @@
+<?php require_once "./lib/functions.php"; ?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/gallary.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>gallary</title>
+</head>
+<body>
+<?php
+$mysql = connectDatabase();
+if (!empty($_GET['galleryImage']) && !empty($_GET['galleryPath'])) {
+
+    $galleryImage = $_GET['galleryImage'];
+    $galleryPath = $_GET['galleryPath'];
+    $sql = "INSERT galleryImages(galleryName, galleryPath) VALUES('$galleryImage','$galleryPath')";
+
+    $mysql->query($sql);
+}
+
+$sql = "SELECT * FROM galleryImages";
+$result = $mysql->query($sql);
+
+
+if (!empty($_GET['Category'])) {
+
+    $Category = $_GET['Category'];
+    $sql = "INSERT category_images(categoryName) VALUES('$Category')";
+
+    $mysql->query($sql);
+}
+?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h2>Images</h2>
+            <table class="table 1" id="dynamic">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Path</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                $mysql = connectDatabase();
+
+                $query = "SELECT id, galleryName,galleryPath FROM galleryImages";
+                $result = $mysql->query($query);
+                while ($arRes = $result->fetch_object()) {
+                    echo("<tr>");
+                    echo("<td>{$arRes->id}</td>");
+                    echo("<td>{$arRes->galleryName}</td>");
+                    echo("<td>{$arRes->galleryPath}</td>");
+                    echo("</tr>");
+                }
+
+                ?>
+                </tbody>
+            </table>
+            <form>
+                <div class="form-group">
+                    <label for="galleryImage">image</label>
+                    <input type="text" class="form-control" name="galleryImage" id="galleryImage" placeholder="Image">
+                </div>
+                <div class="form-group">
+                    <label for="galleryPath">Path</label>
+                    <input type="text" class="form-control" name="galleryPath" id="galleryPath" placeholder="Path">
+                </div>
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <h2>Category images</h2>
+            <table class="table 1" id="dynamic">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                $mysql = connectDatabase();
+
+                $query = "SELECT id, categoryName FROM category_images";
+                $result = $mysql->query($query);
+                while ($arRes = $result->fetch_object()) {
+                    echo("<tr>");
+                    echo("<td>{$arRes->id}</td>");
+                    echo("<td>{$arRes->categoryName}</td>");
+                    echo("</tr>");
+                }
+                ?>
+                </tbody>
+            </table>
+            <form>
+                <div class="form-group">
+                    <label for="Category">Category</label>
+                    <input type="text" class="form-control Category" name="Category" id="Category">
+                </div>
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
