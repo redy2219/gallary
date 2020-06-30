@@ -1,0 +1,11 @@
+INSERT INTO gallery.category_images (id, categoryName) VALUES (6, 'colors');
+INSERT INTO gallery.category_images (id, categoryName) VALUES (7, 'ranbow');
+INSERT INTO gallery.category_images (id, categoryName) VALUES (8, 'sky');
+INSERT INTO gallery.category_images (id, categoryName) VALUES (9, 'people');
+INSERT INTO gallery.category_images (id, categoryName) VALUES (34, 'nature');
+INSERT INTO gallery.category_images (id, categoryName) VALUES (35, 'animals');
+INSERT INTO gallery.category_images (id, categoryName) VALUES (36, 'three');
+INSERT INTO gallery.category_images (id, categoryName) VALUES (37, 'car');
+INSERT INTO gallery.category_images (id, categoryName) VALUES (38, 'sun');
+INSERT INTO gallery.category_images (id, categoryName) VALUES (39, 'rain');
+INSERT INTO gallery.category_images (id, categoryName) VALUES (40, 'dell');
