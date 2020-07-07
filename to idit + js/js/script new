@@ -58,7 +58,5 @@ $().ready(() => {
     $(document).on('dblclick', '.box1', function () {
         $('#navbarsExampleDefault-1').collapse('toggle');
     })
-    $(document).on('click', '.box1', function () {
-    })
-
+   
 })
